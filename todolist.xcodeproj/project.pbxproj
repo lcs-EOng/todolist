@@ -13,6 +13,7 @@
 		26E5AAD72BC595660032D47B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E5AAD62BC595660032D47B /* Preview Assets.xcassets */; };
 		26E5AAE02BC596160032D47B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5AADF2BC596160032D47B /* SwiftUIView.swift */; };
 		26E5AAE22BC59C7B0032D47B /* itemview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5AAE12BC59C7B0032D47B /* itemview.swift */; };
+		26E5AAE42BC59FE50032D47B /* todoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5AAE32BC59FE50032D47B /* todoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		26E5AAD62BC595660032D47B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26E5AADF2BC596160032D47B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		26E5AAE12BC59C7B0032D47B /* itemview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemview.swift; sourceTree = "<group>"; };
+		26E5AAE32BC59FE50032D47B /* todoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				26E5AADF2BC596160032D47B /* SwiftUIView.swift */,
 				26E5AAE12BC59C7B0032D47B /* itemview.swift */,
+				26E5AAE32BC59FE50032D47B /* todoItem.swift */,
 			);
 			path = VIEW;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E5AAE42BC59FE50032D47B /* todoItem.swift in Sources */,
 				26E5AAD22BC595640032D47B /* ContentView.swift in Sources */,
 				26E5AAD02BC595640032D47B /* todolistApp.swift in Sources */,
 				26E5AAE02BC596160032D47B /* SwiftUIView.swift in Sources */,
