@@ -16,15 +16,19 @@ struct LandingView: View {
     //The search text
     @State var searchText = ""
     
+    //List of to do things
+    @State var todos: [TodoItem] = exampleItems
+    
     //MARK: Computed propeties
     var body : some View {
         NavigationView{
             VStack{
-                List{
-                    ItemView(currentItem: firstItem)
-                    ItemView(currentItem: secondItem)
-                    ItemView(currentItem: thirdItem)
+                
+                List(todos) { todo in
+                     ItemView(currentItem: todo)
                 }
+                
+                
                 .searchable(text: $searchText)
                 HStack{
                     TextField("Enter a to-do item", text:
@@ -34,9 +38,10 @@ struct LandingView: View {
                     }
                     .font(.caption)
                 }
+                .padding(20)
+
             }
             .navigationTitle("To do")
-            .padding(20)
         }
         
     }
