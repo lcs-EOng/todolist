@@ -20,6 +20,7 @@ struct ItemView: View {
 #Preview {
     List{
         ItemView(currentItem: firstItem)
+        ItemView(currentItem: secondItem)
     }
     
 }

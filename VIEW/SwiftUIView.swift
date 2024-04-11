@@ -24,8 +24,8 @@ struct LandingView: View {
         NavigationView{
             VStack{
                 
-                List(todos) { todo in
-                     ItemView(currentItem: todo)
+                List($todos) {$todo in
+                    ItemView(currentItem: todo)
                     //Delete button
                         .swipeActions {
                             Button(
@@ -36,8 +36,12 @@ struct LandingView: View {
                                 }
                             )
                         }
+                    
+                    // Tap to mark as done
+                        .onTapGesture {
+                            todo.done.toggle()
+                        }
                 }
-                
                 
                 .searchable(text: $searchText)
                 HStack{
