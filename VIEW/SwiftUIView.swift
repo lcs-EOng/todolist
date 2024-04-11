@@ -16,6 +16,9 @@ struct LandingView: View {
     //The search text
     @State var searchText = ""
     
+    // Access the model contexr(required to do additions, deletions, updates, etc)
+    @Environment(\.modelContext) var modelContext
+    
     //List of to do things
     @State var todos: [TodoItem] = exampleItems
     
