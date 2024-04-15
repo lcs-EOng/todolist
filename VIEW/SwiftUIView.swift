@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LandingView: View {
     //MARK: Stored properties
@@ -20,28 +21,22 @@ struct LandingView: View {
     @Environment(\.modelContext) var modelContext
     
     //List of to do things
-    @State var todos: [TodoItem] = exampleItems
-    
+    @Query var todos: [TodoItem]
+
     //MARK: Computed propeties
     var body : some View {
         NavigationView{
             VStack{
                 
-                List($todos) {$todo in
-                    ItemView(currentItem: $todo)
-                    //Delete button
-                        .swipeActions {
-                            Button(
-                                "Delete",
-                                role: .destructive,
-                                action: {
-                                    delete(todo)
-                                }
-                            )
-                        }
-                    
-                    
+                List {
+                    ForEach(todos) { todo in
+                        
+                        ItemView(currentItem: todo)
+
+                    }
+                    .onDelete(perform: removeRows)
                 }
+                .searchable(text: $searchText)
                 
                 .searchable(text: $searchText)
                 HStack{
@@ -70,17 +65,21 @@ struct LandingView: View {
             done: false
         )
         //Append to  the array
-        todos.append(todo)
+        modelContext.insert(todo)
     }
     
-    func delete(_ todo: TodoItem){
+    func removeRows(at offsets: IndexSet){
         //Remove the provided to-do item from array
-        todos.removeAll{ currentItem in
-            currentItem.id == todo.id
-            
+        //(the position of the item being deleted}
+        
+        //Then Ask  the model context to delete this
+        //For us from the "todos" array
+        for offset in offsets{
+            modelContext.delete(todos[offset])
+        }
         }
     }
-            }
+            
 
         
     
